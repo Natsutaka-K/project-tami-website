@@ -1,0 +1,198 @@
+/*親*/
+.has-submenu-founder {
+    position: relative;
+}
+
+/* サブメニュー */
+.submenu-founder {
+    left: 0;
+    top: 100%;
+    width: 100%; /* ← 画面幅いっぱい */
+
+    background-color: #222;
+
+    display: none;
+    justify-content: center;
+
+    padding: 30px 0;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+
+    z-index: 999;
+}
+
+/* リンク */
+.submenu-founder a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+
+.submenu-founder a:hover {
+    color: #00ffff;
+}
+
+/* ホバーで表示 */
+header:has(.has-submenu-founder:hover) .submenu-founder,
+header:has(.submenu-founder:hover) .submenu-founder{
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    display: block;
+}
+
+.submenu-founder-group{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 120px;
+}
+
+.submenu-founder-group a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.submenu-founder-group a:hover {
+    color: #00ffff;
+}
+
+.submenu-founder-title {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 10px;
+
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+
+.submenu-founder-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    padding: 20px 40px;
+
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+/* リンク */
+.submenu-founder-inner a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.submenu-founder-inner a:hover {
+    color: #00ffff;
+}
+
+
+/* 親 */
+.has-submenu-contact {
+    position: relative;
+}
+
+/* サブメニュー */
+.submenu-contact {
+    left: 0;
+    top: 100%;
+    width: 100%; /* ← 画面幅いっぱい */
+
+    background-color: #222;
+
+    display: none;
+    justify-content: center;
+
+    padding: 30px 0;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+
+    z-index: 999;
+}
+
+/* リンク */
+.submenu-contact a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+
+.submenu-contact a:hover {
+    color: #00ffff;
+}
+
+/* ホバーで表示 */
+header:has(.has-submenu-contact:hover) .submenu-contact,
+header:has(.submenu-contact:hover) .submenu-contact{
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    display: block;
+}
+
+.submenu-contact-group{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 120px;
+}
+
+.submenu-contact-group a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.submenu-contact-group a:hover {
+    color: #00ffff;
+}
+
+.submenu-contact-title {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 10px;
+
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+
+.submenu-contact-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    padding: 20px 40px;
+
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+/* リンク */
+.submenu-contact-inner a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.submenu-contact-inner a:hover {
+    color: #00ffff;
+}

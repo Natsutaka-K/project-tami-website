@@ -1,0 +1,2180 @@
+/* 全体設定 */
+body {
+    margin: 0;
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+/* 全体設定 */
+
+/* ナビゲーション */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #00ffff;
+}
+/* ナビゲーション */
+
+
+
+/* ヘッダー全体 */
+header {
+    position: fixed;
+    top: 10px;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 90%;
+    max-width: 1200px;
+
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+
+    border-radius: 0;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+
+    z-index: 1000;
+
+    display: flex;
+    flex-direction: column;
+
+    box-sizing: border-box;
+
+    transition: all 0.3s ease;
+}
+
+/* ヘッダー上段 */
+.header-top {
+    display: flex;
+    align-items: center;
+    padding: 10px 40px;
+    position: relative;
+}
+
+/* ロゴ（中央固定） */
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    font-family: "Times New Roman", serif;
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+}
+
+.logo a:hover {
+    color: #00ffff;
+}
+
+/* 言語ボタン */
+.lang {
+    margin-left: auto;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sns {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* アイコンの間隔 */
+}
+
+/* インスタロゴマーク */
+.sns img {
+    width: 43px;
+    height: 43px;
+    transition: 0.3s;
+}
+
+.sns img:hover {
+    transform: scale(1.2);
+}
+/* ヘッダー上段 */
+
+/* ヘッダー下段 */
+.header-bottom {
+    border-top: 1px solid #333;
+    padding: 10px 0;
+    position: relative;
+}
+
+.header-bottom ul {
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+    max-width: 800px;
+
+    margin: 0 auto;
+    padding: 0;
+
+    list-style: none;
+}
+
+.header-bottom a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+
+    font-family: "Times New Roman", "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+
+.header-bottom a:hover {
+    color: #00ffff;
+}
+/* ヘッダー下段 */
+
+/* ヘッダーの縮小 */
+/* 縮小状態 */
+header.shrink {
+    top: 0;
+}
+
+/* 上段を小さく */
+header.shrink .header-top {
+    padding: 5px 40px;
+}
+
+/* ロゴ縮小 */
+header.shrink .logo {
+    font-size: 24px;
+}
+
+/* インスタ縮小 */
+header.shrink .sns img {
+    width: 32px;
+    height: 32px;
+}
+/* ヘッダーの縮小 */
+
+/*親*/
+.has-submenu-news {
+    position: relative;
+}
+
+/* サブメニュー */
+.submenu-news {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%; /* ← 画面幅いっぱい */
+
+    background-color: #222;
+    padding: 30px 0;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s;
+    z-index: 999;
+}
+
+/* リンク */
+.submenu-news a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+
+.submenu-news a:hover {
+    color: #00ffff;
+}
+
+/* ホバーで表示 */
+header:has(.has-submenu-news:hover) .submenu-news,
+header:has(.submenu-news:hover) .submenu-news {
+    opacity: 1;
+    visibility: visible;
+}
+
+.submenu-news-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 120px;
+}
+
+.submenu-news-group a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.submenu-news-group a:hover {
+    color: #00ffff;
+}
+
+.submenu-news-title {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 10px;
+
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+
+.submenu-news-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    padding: 20px 40px;
+
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+/* リンク */
+.submenu-news-inner a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.submenu-news-inner a:hover {
+    color: #00ffff;
+}
+
+/*親*/
+.has-submenu-founder {
+    position: relative;
+}
+
+/* サブメニュー */
+.submenu-founder {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%; /* ← 画面幅いっぱい */
+
+    background-color: #222;
+    padding: 30px 0;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s;
+    z-index: 999;
+}
+
+/* リンク */
+.submenu-founder a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+
+.submenu-founder a:hover {
+    color: #00ffff;
+}
+
+/* ホバーで表示 */
+header:has(.has-submenu-founder:hover) .submenu-founder,
+header:has(.submenu-founder:hover) .submenu-founder {
+    opacity: 1;
+    visibility: visible;
+}
+
+.submenu-founder-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 120px;
+}
+
+.submenu-founder-group a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.submenu-founder-group a:hover {
+    color: #00ffff;
+}
+
+.submenu-founder-title {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 10px;
+
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+
+.submenu-founder-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    padding: 20px 40px;
+
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+/* リンク */
+.submenu-founder-inner a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.submenu-founder-inner a:hover {
+    color: #00ffff;
+}
+
+/*親*/
+.has-submenu-contact {
+    position: relative;
+}
+
+/* サブメニュー */
+.submenu-contact {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%; /* ← 画面幅いっぱい */
+
+    background-color: #222;
+    padding: 30px 0;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s;
+    z-index: 999;
+}
+
+/* リンク */
+.submenu-contact a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+
+.submenu-contact a:hover {
+    color: #00ffff;
+}
+
+/* ホバーで表示 */
+header:has(.has-submenu-contact:hover) .submenu-contact,
+header:has(.submenu-contact:hover) .submenu-contact {
+    opacity: 1;
+    visibility: visible;
+}
+
+.submenu-contact-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 120px;
+}
+
+.submenu-contact-group a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.submenu-contact-group a:hover {
+    color: #00ffff;
+}
+
+.submenu-contact-title {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 10px;
+
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+
+.submenu-contact-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    padding: 20px 40px;
+
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+/* リンク */
+.submenu-contact-inner a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.submenu-contact-inner a:hover {
+    color: #00ffff;
+}
+
+/* 親 */
+.has-submenu-project {
+    position: relative;
+}
+
+/* サブメニュー */
+.submenu-project {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+
+    background-color: #222;
+    padding: 30px 0;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s;
+    z-index: 999;
+}
+
+/* ホバーで表示 */
+header:has(.has-submenu-project:hover) .submenu-project,
+header:has(.submenu-project:hover) .submenu-project {
+    opacity: 1;
+    visibility: visible;
+}
+
+.submenu-project-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    padding: 20px 40px;
+
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+.submenu-project-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 120px;
+}
+
+.submenu-project-group a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+
+.submenu-project-group a:hover {
+    color: #00ffff;
+}
+
+.submenu-project-title {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 10px;
+
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+
+.submenu-project-inner a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.submenu-project-inner a:hover {
+    color: #00ffff;
+}
+
+/* フッター */
+/* ===== フッター ===== */
+footer {
+    background-color: #111;
+    border-top: 1px solid #333;
+    padding: 60px 0 30px 0;
+    margin-top: 100px;
+}
+
+.footer-inner {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+/* ロゴ */
+.footer-logo a {
+    font-family: "Times New Roman", serif;
+    font-size: 32px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-logo a:hover {
+    color: #00ffff;
+}
+
+/* ナビゲーション */
+.footer-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-nav a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+    transition: 0.3s;
+}
+
+.footer-nav a:hover {
+    color: #00ffff;
+}
+
+/* SNS */
+.footer-sns {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-sns img {
+    width: 32px;
+    height: 32px;
+    transition: 0.3s;
+}
+
+.footer-sns img:hover {
+    transform: scale(1.2);
+}
+
+/* コピーライト */
+.footer-copy {
+    color: #555;
+    font-size: 12px;
+    margin: 0;
+}
+/* フッター */
+
+
+
+/* ===== ホーム　メイン調整 ===== */
+main {
+    padding-top: 40px;
+}
+
+/* この地球は、想像以上に、美しい */
+/* 配置 */
+.gallery {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(4, 200px);
+
+    gap: 20px;
+
+    width: 90%;
+    margin: 100px auto 0 auto;
+}
+
+/* 共通 */
+.box {
+    border-radius: 0;
+}
+
+/* 初期状態（見えない） */
+.gallery .box {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* 表示状態 */
+.gallery .box.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* テキスト */
+.text {
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 40px;
+    color:black;
+    font-family: "Hiragino Mincho ProN","Yu Mincho", serif;
+}
+
+/* 画像 */
+.img {
+    background: url("https://via.placeholder.com/400") center/cover;
+}
+
+/* 縦長 */
+.tall {
+    grid-row: span 2;
+}
+
+/* 左上テキスト */
+.gallery .text:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+/* 左下 縦長画像 */
+.gallery .img:nth-child(2) {
+    grid-column: 1;
+    grid-row: 2 / span 2;
+}
+
+/* 中央 上画像 */
+.gallery .img:nth-child(3) {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+/* 中央 テキスト */
+.gallery .text:nth-child(4) {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+/* 中央 下画像 */
+.gallery .img:nth-child(5) {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+/* 右 上縦画像 */
+.gallery .img:nth-child(6) {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+}
+
+/* 右 テキスト */
+.gallery .text:nth-child(7) {
+    grid-column: 3;
+    grid-row: 3;
+}
+
+.img1 {
+    background-image: url("../images/山寺.jpg");
+}
+
+.img2 {
+    background-image: url("../images/ザーンセスカンス.jpg");
+}
+
+.img3 {
+    background-image: url("../images/Akrisの皆さんと.jpg");
+}
+
+.img4 {
+    background-image: url("../images/Welcome Dinner.jpg");
+}
+/* この地球は、想像以上に、美しい */
+
+
+
+/* タイトル　Project Tami ～世界を旅する犬のぬいぐるみ～ */
+/*タイトル　配置*/
+.title-section {
+    text-align: center;
+    margin-top: 0;
+}
+
+/* メインタイトル　Project Tami */
+.main-title {
+    font-family: "Times New Roman", serif;
+    font-size: 120px;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* サブタイトル ～世界を旅する犬のぬいぐるみ～ */
+.sub-title {
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-size: 40px;
+    margin-top: 10px;
+    color: #ccc;
+}
+
+.title-text-link {
+    text-decoration: none;   /* 下線を消す */
+    color: inherit;          /* 親の色を引き継ぐ */
+    display: block;          /* ブロック化（中央揃え維持） */
+}
+
+.title-text-link:hover {
+    opacity: 0.7;
+}
+
+/* ===== フェードイン ===== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1.6s ease;
+}
+
+/* 表示後 */
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+/* 祖父母との写真 */
+/* 祖父母が愛したタミが　思いを乗せて　世界を旅する物語*/
+.story {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+
+    width: 90%;
+    max-width: 1000px;
+
+    margin: 300px auto;
+    gap: 20px;
+
+    height: 500px;
+}
+
+/* 左：画像 */
+.story-img {
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/祖父母と\　成人式.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* 画像そのもの */
+.story-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: black;
+}
+
+/* 右：テキスト */
+.story-text {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: white;
+    color: black;
+
+    padding: 40px;
+    box-sizing: border-box;
+
+    font-weight: 400;
+
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* テキスト内側余白 */
+.story-text p {
+    padding: 40px;
+
+    font-size: 28px;
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+    line-height: 3.6;
+    margin: 0;
+
+    text-align: center;
+}
+/* 祖父母との写真 */
+/* 祖父母が愛したタミが　思いを乗せて　世界を旅する物語*/
+
+/* Second Titleセクション*/
+.second-title-section {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 200px;
+}
+
+/* メインタイトル　Project Tami */
+.second-title {
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-size: 60px;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* ===== あの夫婦にもう一度会いたい ===== */
+.home-couple {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+
+    width: 90%;
+    max-width: 1000px;
+
+    margin: 100px auto;
+    gap: 20px;
+
+    height: 500px;
+}
+
+.home-couple-text {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: white;
+    color: black;
+
+    padding: 40px;
+    box-sizing: border-box;
+
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.home-couple-text p {
+    font-size: 28px;
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+    line-height: 3.6;
+    margin: 0;
+    text-align: center;
+}
+
+.home-couple-img {
+    background-image: url("../images/アトランタの夫妻と.jpg");
+    background-position: 20% center !important;
+}
+
+.text-link:hover .home-couple-text {
+    transform: scale(1.2);
+    filter: brightness(0.85);
+}
+
+/* ===== 創業者プロフィール ===== */
+.founder-profile {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+
+    width: 90%;
+    max-width: 1000px;
+
+    margin: 100px auto;
+    gap: 40px;
+
+    height: 500px;
+}
+
+/* 左：多鹿撮影ジャケット */
+.profile-img {
+    width: calc(50% - 20px);
+    height: 100%;
+
+    background-image: url("../images/ジャケット\　多鹿撮影.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* 右：プロフィール */
+.profile-text {
+    width: calc(50% - 20px);
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    box-sizing: border-box;
+}
+
+/* 箇条書き */
+.profile-text ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    color: white;
+    font-size: 18px;
+
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+    line-height: 2;
+}
+
+/* メインの名前（大きい） */
+.name-main {
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+
+    margin-bottom: 0;
+
+    line-height: 1.2;
+
+    margin-top: -10px;
+}
+
+/* ふりがな */
+.name-sub {
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+
+    margin-top: 0;
+
+    line-height: 1.2;
+}
+
+/* インスタリンク */
+.insta-link {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.insta-link img {
+    width: 40px;
+    height: 40px;
+    transition: 0.3s;
+}
+
+.insta-link img:hover {
+    transform: scale(1.2);
+}
+
+/* SNSアイコン横並び */
+.sns-links {
+    margin-top: 10px;
+
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* アイコン */
+.sns-links img {
+    width: 40px;
+    height: 40px;
+    transition: 0.3s;
+}
+
+/* ホバー */
+.sns-links img:hover {
+    transform: scale(1.2);
+}
+/* 右：プロフィール */
+
+/* ===== 幼い頃から燃え盛る　世界への憧れ ===== */
+.founder-title {
+    text-align: center;
+    margin: 80px 0;
+    margin-bottom: 20px;
+}
+
+.founder-main-title {
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; 
+
+    font-size: 72px;
+    font-weight: 360;
+
+    margin: 0;
+    line-height: 1.2;
+}
+/* ===== 幼い頃から燃え盛る　世界への憧れ ===== */
+
+/* ===== 世界への憧れ　右写真　虹の郷 ===== */
+.founder-dream {
+    display: flex;
+    justify-content: center;
+
+    width: 90%;
+    max-width: 1000px;
+
+    gap: 40px;
+
+    margin-top: 40px;
+    margin-bottom: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dream-img {
+    width: calc(50% - 20px);
+    height: 500px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../images/虹の郷\　SLを眺める.jpg");
+}
+
+/* テキスト中身 */
+.founder-research-text p {
+    font-size: 21px;
+    line-height: 2;
+    margin: 0;
+
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+
+/* 左：テキスト */
+.founder-dream-text {
+    width: calc(50% - 20px);
+
+    display: flex;
+    align-items: center;
+
+    color: white;
+}
+
+.founder-dream-text p {
+    font-size: 21px;
+    line-height: 2;
+    margin: 0;
+
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+
+/* ===== 創業者ストーリー ===== */
+.founder-research {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+
+    width: 90%;
+    max-width: 1000px;
+
+    margin: 100px auto;
+    gap: 40px;
+}
+
+/* 左：クラーク博士 */
+.founder-research-img {
+    width: 50%;
+    height: 500px;
+
+    background-image: url("../images/Boys\ Be\ Ambitious.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* 右：テキスト */
+.founder-research-text {
+    width: 50%;
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+}
+
+/* テキスト中身 */
+.founder-research-text p {
+    font-size: 21px;
+    line-height: 2;
+    margin: 0;
+
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+
+/* ===== 中間タイトル ===== */
+.founder-subtitle {
+    text-align: center;
+    margin: 100px 0;
+}
+
+.founder-subtitle-text {
+    font-family: "Times New Roman", serif;
+    font-size: 72px;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* 現在ページ */
+nav a.active {
+    font-weight: 600;
+    border-bottom: 2px solid white;
+    padding-bottom: 5px;
+}
+
+/* ===== 卓球セクション ===== */
+.founder-tabletennis {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+
+    width: 90%;
+    max-width: 1000px;
+
+    margin: 100px auto;
+    gap: 40px;
+}
+
+/* 左：テキスト */
+.founder-tabletennis-text {
+    width: 50%;
+
+    display: flex;
+    align-items: center;
+
+    color: white;
+}
+
+/* テキスト中身 */
+.founder-tabletennis-text p {
+    font-size: 21px;
+    line-height: 2;
+    margin: 0;
+
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+
+/* 右：画像 */
+.founder-tabletennis-img {
+    width: 50%;
+    height: 500px;
+
+    background-image: url("../images/Akris\　トーマス.jpg"); /* ← 画像入れてください */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/* 卓球セクション*/
+
+/* ===== アントレセクション ===== */
+.founder-entrepreneur {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+
+    width: 90%;
+    max-width: 1000px;
+
+    margin: 100px auto;
+    gap: 40px;
+}
+
+/* 左：画像 */
+.founder-entrepreneur-img {
+    width: 50%;
+    height: 500px;
+
+    background-image: url("../images/BAC\ Kickoff.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/* 右：テキスト */
+.founder-entrepreneur-text {
+    width: 50%;
+
+    display: flex;
+    align-items: center;
+
+    color: white;
+}
+
+/* テキスト */
+.founder-entrepreneur-text p {
+    font-size: 21px;
+    line-height: 2;
+    margin: 0;
+
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+/* アントレセクション*/
+
+/* 留学セクション */
+.founder-study-abroad {
+    text-align: center;
+
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; /* ← 追加 */
+
+    font-size: 40px;
+    font-weight: 300;
+
+    margin: 0;
+    line-height: 1.2;
+}
+
+.founder-study-abroad {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+
+    width: 90%;
+    max-width: 1000px;
+
+    margin: 40px auto;
+    gap: 40px;
+}
+
+/* 右：画像 */
+.founder-study-abroad-img {
+    width: 50%;
+    height: 500px;
+
+    background-image: url("../images/Radboud\ Summer\ School\　Ton\ &\ Andreas.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/* 左：テキスト */
+.founder-study-abroad-text {
+    width: 50%;
+
+    display: flex;
+    align-items: center;
+
+    color: white;
+}
+
+/* テキスト */
+.founder-study-abroad-text p {
+    text-align: left;
+    font-size: 21px;
+    line-height: 2;
+    margin: 0;
+
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+/* 留学セクション */
+
+/* 趣味セクション*/
+.founder-hobby {
+    text-align: center;
+
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; /* ← 追加 */
+
+    font-size: 40px;
+    font-weight: 300;
+
+    margin: 0;
+    line-height: 1.2; 
+}
+
+/* ===== 旅行セクション ===== */
+.founder-hobby-travel {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+
+    width: 90%;
+    max-width: 1000px;
+
+    margin: 100px auto;
+    gap: 40px;
+}
+
+/* 左：画像 */
+.founder-travel-img {
+    width: 50%;
+    height: 500px;
+
+    background-image: url("../images/ヒッチハイク\　宇都宮.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/* 右：テキスト */
+.founder-travel-text {
+    width: 50%;
+
+    display: flex;
+    align-items: center;
+
+    color: white;
+}
+
+/* テキスト */
+.founder-travel-text p {
+    text-align: left;
+    font-size: 21px;
+    line-height: 2;
+    margin: 0;
+
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+/* ===== 旅行セクション ===== */
+
+/* ===== 音楽セクション ===== */
+.founder-hobby-music {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+
+    width: 90%;
+    max-width: 1000px;
+
+    margin: 100px auto;
+    gap: 40px;
+}
+
+/* 右：画像 */
+.founder-music-img {
+    width: 50%;
+    height: 500px;
+
+    background-image: url("../images/ハーグ\　ピアノ\　縦.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/* 左：テキスト */
+.founder-music-text {
+    width: 50%;
+
+    display: flex;
+    align-items: center;
+
+    color: white;
+}
+
+/* テキスト */
+.founder-music-text p {
+    text-align: left;
+    font-size: 21px;
+    line-height: 2;
+    margin: 0;
+
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+/* ===== 音楽セクション ===== */
+
+/* ===== 美術セクション ===== */
+.founder-hobby-art {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+
+    width: 90%;
+    max-width: 1000px;
+
+    margin: 100px auto;
+    gap: 40px;
+}
+
+/* 左：画像 */
+.founder-art-img {
+    width: 50%;
+    height: 500px;
+
+    background-image: url("../images/自撮り\　マウリッツハイス.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/* 右：テキスト */
+.founder-art-text {
+    width: 50%;
+
+    display: flex;
+    align-items: center;
+
+    color: white;
+}
+
+/* テキスト */
+.founder-art-text p {
+    text-align: left;
+    font-size: 21px;
+    line-height: 2;
+    margin: 0;
+
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+/* ===== 美術セクション ===== */
+
+/* 父を超えたい */
+.founder-father {
+    text-align: center;
+
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; /* ← 追加 */
+
+    font-size: 26px;
+    font-weight: 300;
+
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* ===== 父を超えたいセクション ===== */
+.founder-father-exceed {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+
+    width: 90%;
+    max-width: 1000px;
+
+    margin: 100px auto;
+    gap: 40px;
+}
+
+/* 右：画像 */
+.founder-father-img {
+    width: 50%;
+    height: 500px;
+
+    background-image: url("../images/井口杯\　背中.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/* 左：テキスト */
+.founder-father-text {
+    width: 50%;
+
+    display: flex;
+    align-items: center;
+
+    color: white;
+}
+
+/* テキスト */
+.founder-father-text p {
+    text-align: left;
+    font-size: 21px;
+    line-height: 2;
+    margin: 0;
+
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+/* ===== 父を超えたいセクション ===== */
+
+section {
+    scroll-margin-top: 120px;
+}
+
+/* ===== 現在地セクション ===== */
+.current-location {
+    text-align: center;
+    margin: 80px 0;
+}
+
+.location-header {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 20px;
+
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto 20px auto;
+}
+
+/* 「現在地」 */
+.location-title {
+    font-size: 86px;
+    font-weight: 400;
+
+    margin-top: 10px;
+
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+
+/* サブタイトル */
+.location-subtitle {
+    font-size: 36px;
+    line-height: 1.6;
+
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+    margin-left: auto;
+    text-align: right;
+}
+
+.location-subtitle p {
+    margin: 0;
+    text-align: right;
+}
+
+.map-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+/* 地図コンテナ */
+.map-container {
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto 0 auto;
+}
+
+.map-img {
+    width: 80%;
+    height: auto;
+    display: block;
+
+    margin: 0 auto;
+}
+
+/* マーカー */
+.map-marker {
+    position: absolute;
+
+    top: 45%;
+    left: 46%;
+
+    transform: translate(-50%, -50%);
+
+    color: yellow;
+    font-size: 30px;
+}
+/* ===== 現在地セクション ===== */
+
+/* ===== ニュースセクション ===== */
+.news-section {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    margin-top: 0;
+}
+
+/* タイトル */
+.news-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+
+/* ニュースボックス */
+.news-box {
+    border-top: 1px solid #444;
+
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* 各ニュース */
+.news-item {
+    display: flex;
+    gap: 20px;
+
+    padding: 15px 0;
+    border-bottom: 1px solid #444;
+}
+
+/* 日付 */
+.news-date {
+    width: 120px;
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* テキスト */
+.news-text {
+    flex: 1;
+    font-size: 18px;
+
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+
+/* スクロールバーを少しおしゃれに（任意） */
+.news-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+.news-box::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+.news-box::-webkit-scrollbar-thumb:hover {
+    background: #00ffff;
+}
+/* ===== ニュースセクション ===== */
+
+/* ===== フェードイン（左から） ===== */
+.fade-left {
+    opacity: 0;
+    transform: translateX(-80px);
+    transition: all 1s ease;
+}
+
+/* ===== フェードイン（右から） ===== */
+.fade-right {
+    opacity: 0;
+    transform: translateX(80px);
+    transition: all 1s ease;
+}
+
+/* 表示後 */
+.fade-left.show,
+.fade-right.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.image-link, .text-link {
+    display: block;
+    overflow: hidden;
+    width: 50%;
+    cursor: pointer;
+
+    color: inherit; /* 色も引き継ぐ（重要） */
+}
+
+.image-box {
+    width: 100%;
+    height: 500px;
+
+    background-size: cover;
+    background-position: center;
+
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.image-link:hover .image-box {
+    transform: scale(1.2);
+    filter: brightness(0.85);
+}
+
+/* ===== ホバー ===== */
+.image-link:hover .story-img,
+.text-link:hover .story-text {
+    transform: scale(1.2);
+    filter: brightness(0.85);
+}
+
+/* マーカー点滅 */
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.2; }
+    100% { opacity: 1; }
+}
+
+.map-marker {
+    animation: blink 1.2s infinite;
+}
+
+/* ===== お問い合わせページ ===== */
+
+.contact-section {
+    width: 90%;
+    max-width: 800px;
+    margin: 200px auto 100px auto;
+    text-align: center;
+}
+
+/* タイトル */
+.contact-title {
+    font-size: 60px;
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+    margin-bottom: 60px;
+    text-align: center;
+    margin-top: 120px;
+}
+
+.form-title {
+    font-size: 32px; /* ←mail-titleと同じにする */
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+
+    text-align: center;
+    margin: 60px 0 30px 0;
+}
+
+.form-description {
+    font-size: 16px;
+    margin-bottom: 40px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+
+/* 2カラム */
+.contact-container {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+
+/* ボックス */
+.contact-box {
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+
+    background-color: #111;
+    border: 1px solid #444;
+
+    text-align: left;
+}
+
+/* 見出し */
+.contact-box h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+
+/* 説明文 */
+.contact-box p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* ===== メールお問い合わせ ===== */
+.contact-mail {
+    width: 90%;
+    max-width: 900px;
+    margin: 100px auto;
+    text-align: center;
+}
+
+/* タイトル */
+.mail-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+
+/* 説明文 */
+.mail-description {
+    font-size: 16px;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+/* ボックス */
+.mail-box {
+    text-align: left;
+    padding: 30px;
+
+    background-color: #111;
+    border: 1px solid #444;
+}
+
+/* リスト */
+.mail-box ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+/* メールアドレス */
+.mail-address {
+    margin-top: 20px;
+}
+
+/* 注意書き */
+.mail-note {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.contact-community {
+    width: 90%;
+    max-width: 800px;
+    margin: 80px auto;
+}
+
+.contact-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.contact-button:hover {
+    background-color: white;
+    color: black;
+}
+
+/* ===== 公式コミュニティ「タミ人」 ===== */
+.community-title {
+    text-align: center;
+    margin: 140px 0 20px;
+}
+
+.community-main-title {
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; 
+    font-size: 72px;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.2;
+}
+/* ===== 公式コミュニティ「タミ人」 ===== */
+
+/* ===== 企画概要ページ ===== */
+.project-intro {
+    text-align: center;
+    width: 90%;
+    max-width: 900px;
+    margin: 180px auto 100px auto;
+}
+
+.project-intro-title {
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-size: 72px;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+
+.project-intro-text {
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-size: 21px;
+    line-height: 2.4;
+    color: #ccc;
+}
+
+.project-intro-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.3s;
+}
+
+.project-intro-link:hover {
+    opacity: 0.7;
+}
+
+/* ===== 目的その一 ===== */
+.project-purpose1 {
+    width: 90%;
+    max-width: 1000px;
+    margin: 100px auto;
+}
+
+.project-purpose1-title {
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-size: 48px;
+    font-weight: 400;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.project-purpose1-content {
+    display: flex;
+    gap: 40px;
+    align-items: stretch;
+    height: 500px;
+}
+
+/* 左：写真 */
+.project-purpose1-img {
+    width: 100%;
+    height: 100%;
+
+    background-image: url("../images/風車\　デルフト\(1\).jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* 右：テキスト */
+.project-purpose1-text {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: white;
+    color: black;
+
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.project-purpose1-text p {
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-size: 36px;
+    line-height: 2;
+    text-align: center;
+    margin: 0;
+    padding: 40px;
+}
+
+.text-link:hover .project-purpose1-text {
+    transform: scale(1.2);
+    filter: brightness(0.85);
+}
+
+/* ===== 目的その二 ===== */
+.project-purpose2 {
+    width: 90%;
+    max-width: 1000px;
+    margin: 100px auto;
+}
+
+.project-purpose2-title {
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-size: 48px;
+    font-weight: 400;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.project-purpose2-content {
+    display: flex;
+    gap: 40px;
+    align-items: stretch;
+    height: 500px;
+}
+
+.project-purpose2-img {
+    background-image: url("../images/アトランタの夫妻と.jpg");
+    background-position: 25% center;
+}
+
+.project-purpose2-text {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: white;
+    color: black;
+
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.project-purpose2-text p {
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-size: 36px;
+    line-height: 2;
+    text-align: center;
+    margin: 0;
+    padding: 40px;
+}
+
+.text-link:hover .project-purpose2-text {
+    transform: scale(1.2);
+    filter: brightness(0.85);
+}
+
+/* ===== タミセクション ===== */
+.project-tami {
+    width: 90%;
+    max-width: 1000px;
+    margin: 100px auto;
+}
+
+.project-tami-title {
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.project-tami-text {
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-size: 21px;
+    line-height: 2.4;
+    text-align: center;
+    color: #ccc;
+    margin-bottom: 40px;
+}
+
+.project-tami-img {
+    width: 80%;
+    height: 400px;
+    margin: 0 auto;
+
+    background-image: url("../images/タミ\(2\)\ トイレの写真.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.project-tami-link {
+    width: 100%;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.3s;
+}
+
+.project-tami-link:hover {
+    opacity: 0.7;
+}
+
+/* ===== クラウドファンディングセクション ===== */
+.news-crowdfunding {
+    width: 90%;
+    max-width: 900px;
+    margin: 80px auto;
+}
+
+.crowdfunding-container {
+    display: flex;
+    gap: 40px;
+}
+
+.crowdfunding-box {
+    width: 50%;
+    padding: 40px;
+
+    background-color: #111;
+    border: 1px solid #444;
+
+    box-sizing: border-box;
+}
+
+.crowdfunding-box-title {
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-size: 26px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.crowdfunding-box-text {
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    color: #ccc;
+}
+
+/* ===== 英語ページ用フォント ===== */
+body.en h1,
+body.en h2,
+body.en h3,
+body.en p,
+body.en a,
+body.en li {
+    font-family: "Times New Roman", serif;
+}
+
+.lang button,
+.lang-btn {
+    width: 80px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: none;
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+
+    cursor: pointer;
+    transition: 0.3s;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.lang button:hover,
+.lang-btn:hover {
+    background-color: white;
+    color: black;
+}
+
+.lang-btn-ja {
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif !important;
+}
+
+.lang-btn-en {
+    font-family: "Times New Roman", serif !important;
+}
+
+.contact-button {
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+}
+
+body.en .contact-button {
+    font-family: "Times New Roman", serif;
+}
+
+/* ===== お問い合わせページ フォント ===== */
+.form-description,
+.mail-description,
+.mail-box p,
+.mail-box ul,
+.mail-note,
+.contact-box p,
+.contact-community p {
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
